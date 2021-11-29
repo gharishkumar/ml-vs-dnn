@@ -1,8 +1,29 @@
 import skflow
-from sklearn import datasets, metrics
+from sklearn import  metrics
 
-iris = datasets.load_iris()
-classifier = skflow.TensorFlowDNNClassifier(hidden_units=[10, 20, 10], n_classes=3)
-classifier.fit(iris.data, iris.target)
-score = metrics.accuracy_score(iris.target, classifier.predict(iris.data))
+import numpy as np
+import csv
+from sklearn.utils import Bunch
+
+def load_crime_dataset():
+    with open(r'10_Property_stolen_and_recovered.csv') as csv_file:
+        data_reader = csv.reader(csv_file)
+        feature_names = next(data_reader)[:-1]
+        data = []
+        target = []
+        for row in data_reader:
+            if(row != []):
+                features = row[4:]
+                label = row[-1]
+                data.append([float(num) for num in features])
+                target.append(int(label))
+        
+        data = np.array(data)
+        target = np.array(target)
+    return Bunch(data=data, target=target, feature_names=feature_names)
+
+data = load_crime_dataset()
+classifier = skflow.TensorFlowDNNClassifier(hidden_units=[10, 20, 10], n_classes=36)
+classifier.fit(data.data, data.target)
+score = metrics.accuracy_score(data.target, classifier.predict(data.data))
 print("Accuracy: %f" % score)
