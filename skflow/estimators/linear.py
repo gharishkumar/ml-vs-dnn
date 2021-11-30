@@ -58,7 +58,7 @@ class TensorFlowLinearClassifier(TensorFlowEstimator, ClassifierMixin):
                  verbose=1, early_stopping_rounds=None,
                  max_to_keep=5, keep_checkpoint_every_n_hours=10000):
         super(TensorFlowLinearClassifier, self).__init__(
-            model_fn=models.logistic_regression, n_classes=n_classes,
+            model_fn=models.logistic_regression, n_classes=n_classes+1,
             tf_master=tf_master,
             batch_size=batch_size, steps=steps, optimizer=optimizer,
             learning_rate=learning_rate, class_weight=class_weight,

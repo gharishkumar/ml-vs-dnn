@@ -68,7 +68,7 @@ class TensorFlowDNNClassifier(TensorFlowEstimator, ClassifierMixin):
         self.hidden_units = hidden_units
         super(TensorFlowDNNClassifier, self).__init__(
             model_fn=self._model_fn,
-            n_classes=n_classes, tf_master=tf_master,
+            n_classes=n_classes+1, tf_master=tf_master,
             batch_size=batch_size, steps=steps, optimizer=optimizer,
             learning_rate=learning_rate, class_weight=class_weight,
             tf_random_seed=tf_random_seed,
