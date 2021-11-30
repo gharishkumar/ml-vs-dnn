@@ -16,3 +16,5 @@ Using scikit-learn and skflow to compare different machine learning algorithms w
       ```
       python <file_name>.py
       ```
+## Dataset used
+      [kaggle rajanand/crime-in-india](https://www.kaggle.com/rajanand/crime-in-india)
