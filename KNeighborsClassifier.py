@@ -14,7 +14,7 @@ def load_crime_dataset():
         for row in data_reader:
             if(row != []):
                 features = row[4:]
-                label = row[-1]
+                label = row[3][0]
                 data.append([float(num) for num in features])
                 target.append(int(label))
         

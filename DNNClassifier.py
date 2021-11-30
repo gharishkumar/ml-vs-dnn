@@ -14,7 +14,7 @@ def load_crime_dataset():
         for row in data_reader:
             if(row != []):
                 features = row[4:]
-                label = row[-1]
+                label = row[3][0]
                 data.append([float(num) for num in features])
                 target.append(int(label))
         
@@ -23,7 +23,7 @@ def load_crime_dataset():
     return Bunch(data=data, target=target, feature_names=feature_names)
 
 data = load_crime_dataset()
-classifier = skflow.TensorFlowDNNClassifier(hidden_units=[10, 20, 10], n_classes=36)
+classifier = skflow.TensorFlowDNNClassifier(hidden_units=[10, 20, 10], n_classes=7)
 classifier.fit(data.data, data.target)
 score = metrics.accuracy_score(data.target, classifier.predict(data.data))
 print("Accuracy: %f" % score)
