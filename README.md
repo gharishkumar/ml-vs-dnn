@@ -5,9 +5,9 @@ Using scikit-learn and skflow to compare different machine learning algorithms w
 
 1. Create an [environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) (recommended if you have multiple projects on the same machine)
 
-1. Install tensorflow and scikit-learn from pip
+1. Install tensorflow from pip
       ```
-      pip install tensorflow sklearn
+      pip install tensorflow
       ```
 
 1. Run the code
