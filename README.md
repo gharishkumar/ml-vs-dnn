@@ -1,7 +1,7 @@
 # ml-vs-dnn
 Using scikit-learn and skflow to compare different machine learning algorithms with a deep neural network.
 ## Steps to execute
-1. Install [Python](https://www.python.org/downloads/)
+1. Install [Python 3.9](https://www.python.org/downloads/release/python-399/)
 
 1. Create an [environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) (recommended if you have multiple projects on the same machine)
 
